@@ -29,17 +29,41 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
+  building_vr_18:
+      needs: [build]
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v5
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+      - run: npm install
+      - run: npm run build --if-present
+      - run: npm test
   building_vr_20:
-    needs: [build]
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v5
-    - name: Use Node.js
-      uses: actions/setup-node@v4
-      with:
+      needs: [building_vr_18]
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v5
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
           node-version: '20.x'
-    - run: npm install
-    - run: npm run build --if-present
-    - run: npm test
+      - run: npm install
+      - run: npm run build --if-present
+      - run: npm test
+  building_vr_22:
+      needs: [building_vr_20]
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v5
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+      - run: npm install
+      - run: npm run build --if-present
+      - run: npm test
 
    
