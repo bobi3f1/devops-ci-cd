@@ -30,6 +30,7 @@ jobs:
     - run: npm run build --if-present
     - run: npm test
   building_vr_18:
+      name: vr 18
       needs: [build]
       runs-on: ubuntu-latest
       steps:
