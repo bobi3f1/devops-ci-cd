@@ -101,3 +101,5 @@ npm run validate  # TypeCheck + Tests + Build
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+[![Node.js CI](https://github.com/bobi3f1/devops-ci-cd/actions/workflows/node.js.yml/badge.svg)](https://github.com/bobi3f1/devops-ci-cd/actions/workflows/node.js.yml)
